@@ -10,7 +10,7 @@ export class MovieComponent implements OnInit {
   public showTitle:string;
   public showFound:boolean = false;
   public notFound:boolean = false;
-  public noPoster = '/assets/images/noPoster.jpg';
+  public noPoster = 'assets/images/noPoster.jpg';
   constructor(private _movieservice:MovieserviceService) {  }
   handleSuccess(data){
     if(data.hasOwnProperty('Error')){
