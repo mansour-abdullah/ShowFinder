@@ -4,5 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  OMDB_API_KEY: '&apikey=28e14e93',
+  OMDB_API_URL:'http://www.omdbapi.com/?t='
 };
+ 

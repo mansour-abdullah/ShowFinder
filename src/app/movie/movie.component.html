@@ -1,0 +1,40 @@
+<div class="row"> 
+<div class="col-md-12">
+<h2 class="logo">Show App</h2> 
+<hr>
+</div>
+
+<form class="col-md-12" (submit)="find(showTitle)">
+<div class="form-group">
+<input type="text" class="form-control " name="title" placeholder="Enter Show Title then press Enter" [(ngModel)]="showTitle">
+</div>
+<input type="submit" hidden>
+</form>
+ 
+<div class="col-md-12">
+    <div class="card" *ngIf="showFound">
+        <div class="card-header"><h2>{{show.Title}} - {{show.Type}}</h2>
+        <h5 ><span  >{{show.Genre}}</span>  
+            <a href="http://www.imdb.com/title/{{show.imdbID}}" target="_blank"><strong>IMDb</strong></a>
+        </h5>
+        </div>
+        <div class="card-block row">
+            <div class="col-md-4">
+            <img [src]="show.Poster !== 'N/A' ? show.Poster : noPoster" alt="" class="img-thumbnail ">
+        </div>
+        <div class="col-md-8">
+            <p><strong>Year:</strong> {{show.Year}}</p>
+            <p><strong>Country:</strong> {{show.Country}}</p>
+            <p><strong>Language:</strong> {{show.Language}}</p>
+            <p><strong>Actors:</strong> {{show.Actors}}</p>
+            <p><strong>Rating:</strong> {{show.imdbRating}}</p>
+            <p><strong>Plot:</strong> {{show.Plot}}</p>
+        </div>
+
+        </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="notFound">
+        Show not found!
+    </div>
+</div>
+</div>
