@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AppComponent } from './app.component';
-import { MovieComponent } from './movie/movie.component';
+import { ShowComponent } from './show/show.component';
 import { HttpModule } from '@angular/http';
-import { MovieserviceService } from './shared/movieservice.service';
+import { ShowService } from './shared/show.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieComponent
+    ShowComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import { MovieserviceService } from './shared/movieservice.service';
     HttpModule,
     HttpClientModule
   ],
-  providers: [MovieserviceService],
+  providers: [ShowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

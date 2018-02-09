@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieserviceService } from '../shared/movieservice.service';
+import { ShowService } from '../shared/show.service';
 @Component({
   selector: 'app-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  templateUrl: './show.component.html',
+  styleUrls: ['./show.component.css']
 })
-export class MovieComponent implements OnInit {
+export class ShowComponent implements OnInit {
   public show;
   public showTitle:string;
   public showFound:boolean = false;
   public notFound:boolean = false;
   public noPoster = 'assets/images/noPoster.jpg';
-  constructor(private _movieservice:MovieserviceService) {  }
+  constructor(private _showservice:ShowService) {  }
   handleSuccess(data){
     if(data.hasOwnProperty('Error')){
       this.notFound = true;
       this.showFound = false;
-      // do this   
-      console.log('shit');
+   
     }else{
-      // do this then
+      
     this.notFound = false;
     this.showFound = true;
     this.show = data;
@@ -27,7 +26,7 @@ export class MovieComponent implements OnInit {
     
   }
   find(query:string){
-    return this._movieservice.findShow(query).subscribe(
+    return this._showservice.findShow(query).subscribe(
       data => this.handleSuccess(data)
     );
   }

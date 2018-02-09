@@ -6,7 +6,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 @Injectable()
-export class MovieserviceService {
+export class ShowService {
   private query:string;
   private title:string= '?t=';
   private API_KEY:string = environment.OMDB_API_KEY;
